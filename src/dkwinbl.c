@@ -1,5 +1,6 @@
 /* Copyright 2016 - Derek Kwan
  *  * Distributed under GPL v3 */
+#include <stdio.h>
 #include "m_pd.h"
 #include "pdkwin.h"
 #include <string.h>

@@ -4,9 +4,10 @@ double pdkval(double win[], double idx){
     //expects input 0-1
     double output;
     //maps input so 0 = 0, 1 = sz -1
-    int tabphase1 = (int)(idx*((double)M1));
+    double mapped = idx*(double)M1;
+    int tabphase1 = (int)mapped;
     int tabphase2 = tabphase1 + 1;
-    double frac = idx - (double)tabphase1;
+    double frac = mapped - (double)tabphase1;
     if(tabphase1 >= M1){
             tabphase1 = M1; //checking to see if index falls within bounds
             output = win[tabphase1];
@@ -214,7 +215,7 @@ double * pdk_maketri(){
     if(!made){
         for(i=0;i<MVAL; i++){
             double idx= (double)i;
-            pdk_tri[i] = 1-abs((idx - (double)M1/2.)/((double)M1/2.));
+            pdk_tri[i] = 1.-fabs((idx - (double)M1/2.)/((double)M1/2.));
         };
         made = 1;
     };
