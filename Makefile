@@ -3,11 +3,11 @@
 lib.name = pdkfft
 
 # headers
-#dkrnd := src/dkrnd.c
-#dkwtab := src/dkwtab.c
+pdkwin := src/pdkwin.c
 
 dkcarpol~.class.sources = src/dkcarpol.c 
 dkpolcar~.class.sources = src/dkpolcar.c 
+dkwinbl~.class.sources = src/dkwinbl.c $(pdkwin)
 
 datafiles =  README.txt \
 		LICENSE.txt
