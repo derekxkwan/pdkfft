@@ -40,11 +40,11 @@ double * pdk_makegauss(double oval){
     //omega should be <= 0.5
     //oval = o value we want, if not same as o, recalculate
     static int made = 0;
-    static double o = 0.25;
+    static double o = -1.; //so we know it hasn't been set yet
     if(!made && oval != o){
         o = oval;
         if(o < 0){
-            o = 0;
+            o = 0.;
         }
         else if(o > 0.5){
             o = 0.5;
@@ -65,7 +65,7 @@ double * pdk_makegauss(double oval){
 double * pdk_maketukey(double aval){
     //aval = a value we want, if not same as a, recalculate
     static int made = 0;
-    static double a = 0.5;
+    static double a = -1.; //so we know it hasn't been set yet
     if(!made && aval != a){
         a = aval;
         //alpha should be [0,1]
